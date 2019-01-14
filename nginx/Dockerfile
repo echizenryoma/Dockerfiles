@@ -2,7 +2,8 @@ FROM alpine:3.8
 
 LABEL maintainer="Echizen Ryoma <echizenryoma.zhang@gmail.com>"
 
-RUN apk add nginx nginx-mod-http-headers-more
+RUN apk add nginx nginx-mod-http-headers-more \
+    && mkdir -p /var/run/
 
 COPY files/nginx.conf /etc/nginx/nginx.conf
 COPY files/nginx.d/default.conf /etc/nginx/nginx.d/default.conf
