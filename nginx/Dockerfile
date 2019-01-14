@@ -6,7 +6,6 @@ RUN apk add nginx nginx-mod-http-headers-more \
     && mkdir -p /var/run/
 
 COPY files/nginx.conf /etc/nginx/nginx.conf
-COPY files/nginx.d/default.conf /etc/nginx/nginx.d/default.conf
 COPY files/proxy.conf /etc/nginx/proxy.conf
 
 EXPOSE 80
