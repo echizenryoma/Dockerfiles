@@ -8,8 +8,8 @@ RUN apk add -U squid \
     && mkdir -p /var/log/squid \
     && rm -rf /var/cache/apk/*
 
-COPY files/nginx.conf /etc/nginx/nginx.conf
-COPY files/proxy.conf /etc/nginx/proxy.conf
+COPY squid/files/nginx.conf /etc/nginx/nginx.conf
+COPY squid/files/proxy.conf /etc/nginx/proxy.conf
 
 EXPOSE 8123
 
