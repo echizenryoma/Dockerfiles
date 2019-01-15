@@ -2,19 +2,17 @@ FROM alpine:3.8
 
 LABEL maintainer="Echizen Ryoma <echizenryoma.zhang@gmail.com>"
 
-VOLUME [ "/etc/nginx/conf.d" ]
+VOLUME [ "/etc/squid/passwd", "/var/log/squid" ]
 
-RUN apk add -U nginx \
-        nginx-mod-http-headers-more \
-    && mkdir -p /var/run/ \
+RUN apk add -U squid \
+    && mkdir -p /var/log/squid \
     && rm -rf /var/cache/apk/*
 
 COPY files/nginx.conf /etc/nginx/nginx.conf
 COPY files/proxy.conf /etc/nginx/proxy.conf
 
-EXPOSE 80
-EXPOSE 443
+EXPOSE 8123
 
 STOPSIGNAL SIGTERM
 
-CMD [ "nginx", "-g", "daemon off;" ]
+CMD [ "squid" ]
