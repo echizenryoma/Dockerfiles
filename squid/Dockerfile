@@ -14,4 +14,4 @@ EXPOSE 3128
 
 STOPSIGNAL SIGTERM
 
-CMD [ "squid" ]
+CMD [ "squid", "-N" ]
