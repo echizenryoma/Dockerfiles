@@ -2,8 +2,6 @@ FROM alpine:3.8
 
 LABEL maintainer="Echizen Ryoma <echizenryoma.zhang@gmail.com>"
 
-WORKDIR nginx
-
 VOLUME [ "/etc/nginx/conf.d" ]
 
 RUN apk add -U nginx \
