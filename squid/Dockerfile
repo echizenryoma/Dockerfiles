@@ -10,7 +10,7 @@ RUN apk add -U squid \
 
 COPY squid/files/squid.conf /etc/squid/squid.conf
 
-EXPOSE 8123
+EXPOSE 3128
 
 STOPSIGNAL SIGTERM
 
