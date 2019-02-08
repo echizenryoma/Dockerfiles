@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine
 
 LABEL maintainer="Echizen Ryoma <echizenryoma.zhang@gmail.com>"
 
